@@ -1,0 +1,328 @@
+/* Enhanced Design Elements */
+
+/* Subtle gradient overlay for hero section */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.3) 100%);
+    z-index: 1;
+}
+
+#home > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Enhanced skill cards with gradient borders */
+.skill-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    transition: left 0.6s ease;
+}
+
+.skill-card:hover::before {
+    left: 100%;
+}
+
+/* Project card enhancement */
+.project-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.3);
+}
+
+/* Animated border for contact form */
+#contact form {
+    position: relative;
+}
+
+#contact form::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    padding: 2px;
+    background: linear-gradient(45deg, #3b82f6, #10b981, #8b5cf6);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#contact form:hover::before {
+    opacity: 1;
+}
+
+/* Floating animation for chat button */
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+#chatWindow + button {
+    animation: float-slow 4s ease-in-out infinite;
+}
+
+/* Enhanced glass effect for chat window */
+#chatWindow {
+    backdrop-filter: blur(16px);
+    background: rgba(30, 41, 59, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text for headings */
+.gradient-text {
+    background: linear-gradient(45deg, #3b82f6, #10b981, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hover effect for social icons */
+footer a {
+    position: relative;
+    overflow: hidden;
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+footer a:hover::after {
+    transform: translateX(0);
+}
+
+/* Pulse animation for CTA buttons */
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+    50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.8); }
+}
+
+.pulse-button {
+    animation: pulse-glow 2s infinite;
+}
+
+/* Scroll progress indicator */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #10b981);
+    z-index: 9999;
+    transition: width 0.3s ease;
+}
+
+/* Enhanced input focus effects */
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6 !important;
+}
+
+/* Subtle parallax effect for sections */
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Loading spinner for AI features */
+.ai-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(139, 92, 246, 0.3);
+    border-radius: 50%;
+    border-top-color: #8b5cf6;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Enhanced mobile menu */
+#mobile-menu {
+    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.95);
+}
+
+/* Smooth fade-in for sections */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom scrollbar for entire page */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #3b82f6, #10b981);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #2563eb, #059669);
+}
+.PhineX {
+    color: linear-gradient(45deg, #3b82f6, #8b5cf6);
+}
+.btn-facebooklink {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  transition: var(--transition) !important;
+  color: var(--light) !important;
+  text-decoration: none !important;
+  margin-bottom: 20px !important;
+  font-size: 1.2rem !important;
+  transform: translateY(0) !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Remove the conflicting btn-facebooklink styles */
+.social-links .btn-facebooklink:hover {
+  background: #1877F2 !important;
+  box-shadow: 0 0 15px rgba(24, 119, 242, 0.4) !important;
+  transform: translateY(-5px) !important;
+  color: white !important;
+}
+/* Make sure icon is centered */
+.social-links .btn-facebooklink i {
+  margin: 0 !important;
+  line-height: 0 !important;
+}
+/* Scroll container styles */
+.scroll-container {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll-wrapper {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    position: relative;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.scroll-section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    position: relative;
+}
+
+/* Progress bar indicator for custom scroll */
+.progress-indicator {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.progress-dot.active {
+    background-color: #3b82f6;
+    transform: scale(1.3);
+}
+
+.progress-dot:hover {
+    background-color: rgba(59, 130, 246, 0.7);
+}
+
+/* Smooth scroll transition */
+.smooth-transition {
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Chat visibility classes */
+.chat-hidden {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.chat-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    visibility: visible;
+}
+
+/* Add transition to the chat window */
+#chatWindow {
+    display: none !important;
+    opacity: 0 !important;
+    transition: all 0.3s ease !important;
+    position: absolute !important;
+    bottom: 80px !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+}
